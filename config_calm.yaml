@@ -1,0 +1,62 @@
+# Example Custom Configuration - Calm/Minimal Style
+# Subtle movements with slow, smooth transitions
+
+output:
+  video_file: "calm_output.mp4"
+  fps: 24
+  video_preset: "slow"  # Better quality
+
+audio:
+  talk_threshold: 0.10  # Less sensitive
+  mouth_change_energy: 0.08  # Fewer mouth changes
+
+animation:
+  mouth:
+    small_threshold: 0.3
+    medium_threshold: 0.7
+    lerp_enabled: true
+    lerp_speed: 0.15  # Very slow, smooth transitions
+  
+  blink:
+    enabled: true
+    min_interval: 4.0  # Less frequent
+    max_interval: 8.0
+    duration: 0.18  # Slower blinks
+  
+  head_bob:
+    enabled: true
+    amount: 4.0  # Subtle
+    speed: 0.3  # Slow
+    only_when_talking: true
+    lerp_enabled: true
+    lerp_speed: 0.1  # Very smooth
+  
+  breathing:
+    enabled: true
+    amount: 2.0  # Subtle
+    speed: 0.25  # Slow breathing
+    talking_scale: 0.5
+    lerp_enabled: true
+    lerp_speed: 0.1  # Very smooth
+  
+  eyes:
+    drift_enabled: true
+    drift_speed: 0.5  # Slow drift
+    drift_amount_x: 3.0
+    drift_amount_y: 2.0
+    
+    dart_enabled: false  # No sudden movements
+    
+    lerp_enabled: true
+    lerp_speed: 0.15  # Slow eye movements
+  
+  eyebrows:
+    enabled: true
+    raise_on_emphasis: true
+    hold_duration: 0.5
+    lerp_enabled: true
+    lerp_speed: 0.2  # Slow eyebrow movements
+
+performance:
+  parallel: true
+  cleanup_frames: true

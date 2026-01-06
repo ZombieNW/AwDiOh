@@ -1,0 +1,67 @@
+# Example Custom Configuration - Energetic Style
+# More exaggerated movements and faster transitions
+
+output:
+  video_file: "energetic_output.mp4"
+  fps: 24  # Higher FPS for smoother motion
+  video_bitrate: "8M"  # Higher quality
+
+audio:
+  talk_threshold: 0.06  # More sensitive
+  mouth_change_energy: 0.03  # More frequent mouth changes
+
+animation:
+  mouth:
+    small_threshold: 0.2
+    medium_threshold: 0.5
+    lerp_enabled: true
+    lerp_speed: 0.5  # Faster transitions
+  
+  blink:
+    enabled: true
+    min_interval: 2.0  # More frequent blinking
+    max_interval: 4.0
+    duration: 0.12  # Faster blinks
+  
+  head_bob:
+    enabled: true
+    amount: 12.0  # More exaggerated
+    speed: 0.7  # Faster bobbing
+    only_when_talking: true
+    lerp_enabled: true
+    lerp_speed: 0.3
+  
+  breathing:
+    enabled: true
+    amount: 5.0  # More pronounced
+    speed: 0.4
+    talking_scale: 0.2  # Less breathing when talking
+    lerp_enabled: true
+    lerp_speed: 0.2
+  
+  eyes:
+    drift_enabled: true
+    drift_speed: 1.0  # Faster drift
+    drift_amount_x: 6.0
+    drift_amount_y: 4.0
+    
+    dart_enabled: true
+    dart_chance: 0.03  # More frequent darts
+    dart_duration: 0.15  # Faster darts
+    dart_range_x: 20
+    dart_range_y: 15
+    
+    lerp_enabled: true
+    lerp_speed: 0.4  # Faster eye movements
+  
+  eyebrows:
+    enabled: true
+    raise_on_emphasis: true
+    hold_duration: 0.4
+    lerp_enabled: true
+    lerp_speed: 0.5
+
+performance:
+  parallel: true
+  num_workers: null
+  cleanup_frames: true

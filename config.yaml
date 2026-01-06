@@ -1,0 +1,123 @@
+# Video Output
+output:
+  # Video Output
+  video_file: "output.mp4"
+  fps: 24
+  frame_size: [2048, 2048]
+
+  # FFmpeg
+  video_codec: "libx264"
+  video_preset: "medium" # ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow
+  video_bitrate: "5M"
+  audio_bitrate: "192k"
+
+# Face Assets
+assets:
+  directory: "assets"
+  base: "base.png"
+  eyes_open: "eyes_open.png"
+  eyes_closed: "eyes_closed.png"
+  mouths:
+    closed: "mouth_closed.png"
+    small: "mouth_small.png"
+    medium: "mouth_medium.png"
+    wide: "mouth_wide.png"
+  eyebrows:
+    normal: "eyebrows_normal.png"
+    raised: "eyebrows_raised.png"
+
+# Audio Analysis
+audio:
+  talk_threshold: 0.08 # Detection Threshold
+  mouth_change_energy: 0.05 # Change Sensitivity
+
+  # Pitch
+  pitch_min: 80
+  pitch_max: 400
+  pitch_smoothing: 5
+
+  # Emphasis
+  emphasis_pitch_threshold: 85
+  emphasis_energy_threshold: 85
+
+# Animation Parameters
+animation:
+  # Mouth Movements
+  mouth:
+    small_threshold: 0.25
+    medium_threshold: 0.6
+
+    # Lerping
+    lerp_enabled: true
+    lerp_speed: 0.3
+
+  # Blinking
+  blink:
+    enabled: true
+    min_interval: 3.0
+    max_interval: 6.0
+    duration: 0.15
+  
+  # Head Bobbing
+  head_bob:
+    enabled: true
+    amount: 8.0
+    speed: 0.5
+    only_when_talking: true
+
+    # Lerping
+    lerp_enabled: true
+    lerp_speed: 0.3
+  
+  # Breathing
+  breathing:
+    enabled: true
+    amount: 3.0
+    speed: 0.3
+    talking_scale: 0.3
+
+    # Lerping
+    lerp_enabled: true
+    lerp_speed: 0.15
+  
+  # Eyes
+  eyes:
+    # Eye Drift
+    drift_enabled: true
+    drift_speed: 0.7
+    drift_amount_x: 4.0
+    drift_amount_y: 3.0
+
+    # Eye Darts
+    dart_enabled: true
+    dart_chance: 0.02
+    dart_duration: 0.2
+    dart_range_x: 15
+    dart_range_y: 10
+
+    # Lerping
+    lerp_enabled: true
+    lerp_speed: 0.25
+  
+  # Eyebrows
+  eyebrows:
+    enabled: true
+    raise_on_emphasis: true
+    hold_duration: 0.3
+
+    # Lerping
+    lerp_enabled: true
+    lerp_speed: 0.4
+  
+# Performance Settings
+performance:
+  parallel: true
+  num_workers: null # null for auto
+  cleanup_frames: true
+  frames_directory: "frames"
+
+# Debug/Dev
+debug:
+  keep_frames: false
+  show_progress: true
+  verbose: true
